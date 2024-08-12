@@ -3,7 +3,7 @@ title: Movie and Screenshot Making Outage
 date: 2024-08-11T12:13:00-04:00
 author: Kasim Necdet Percinel
 layout: post
-permalink: /2024/10/11/movie-and-screenshot-outage
+permalink: /2024/08/11/movie-and-screenshot-outage
 categories:
   - Outages
 ---
