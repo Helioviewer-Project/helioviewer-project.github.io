@@ -8,7 +8,7 @@ categories:
   - Outages
 ---
 
-2024-10-12 Update: 
+2024-08-12 Update: 
 We're excited to inform you that the issues affecting our server's movie-making and screenshot features have been successfully resolved. 
 As of today, **August 12th, 2024 (EDT)**, these features are now fully operational and back online.
 
