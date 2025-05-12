@@ -38,7 +38,7 @@ continues on the 3D environment.
 
 ## Accessing 3D Mode
 
-Users will find a "3D View" option in the Helioviewer.org interface.
+Users will find a "3D View" option in the upper left of the Helioviewer.org interface.
 Selecting this option switches from the standard 2D view to the 3D environment.
 Users can toggle between modes as needed.
 
