@@ -8,10 +8,10 @@ categories:
   - Maintenance
 ---
 
-Starting Monday, March 9, 2026 [helioviewer.org](https://helioviewer.org) will be down as the server is being moved to a new building.
-We do not have an ETA on how long the move will take. Helioviewer.org may be down for several days.
+Starting Monday, March 9, 2026 [helioviewer.org](https://helioviewer.org) and other Helioviewer Project services will be brought down to accommodate a scheduled transition to a new location.
+Users should expect outages and intermittent availability of helioviewer.org and other Helioviewer Project services for several days.
 
-During this maintenance period you can expect the following:
+During this period users should expect the following:
 - helioviewer.org will be temporarily unavailable
 - JHelioviewer users may not be able to load data from GSFC
 - Helioviewer API and other services will be temporarily interrupted
