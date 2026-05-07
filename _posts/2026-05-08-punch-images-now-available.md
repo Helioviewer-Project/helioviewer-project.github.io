@@ -3,7 +3,7 @@ title: PUNCH images now available
 date: 2026-05-08T00:00:00-05:00
 author: Helioviewer Team
 layout: post
-permalink: /2026/03/31/service-restored
+permalink: /2026/05/08/punch-images-now-available
 categories:
   - Maintenance
 ---
