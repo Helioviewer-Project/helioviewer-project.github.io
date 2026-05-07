@@ -5,7 +5,7 @@ author: Helioviewer Team
 layout: post
 permalink: /2026/05/08/punch-images-now-available
 categories:
-  - Maintenance
+  - General
 ---
 
 Images from NASA's PUNCH mission are now available via Helioviewer.org.
