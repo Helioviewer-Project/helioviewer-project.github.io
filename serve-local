@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#
+# Serves this Jekyll site locally using the official jekyll/jekyll Docker
+# image. No Ruby/Jekyll/Bundler installation required on the host.
+#
+# Usage: ./serve-local
+#
+set -euo pipefail
+
+cd "$(dirname "$0")"
+
+exec docker run --rm \
+  --volume "$PWD:/srv/jekyll" \
+  --publish 4000:4000 \
+  jekyll/jekyll:latest \
+  bash -c "bundle install && bundle exec jekyll serve --watch --force_polling --host 0.0.0.0"
