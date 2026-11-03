@@ -10,13 +10,20 @@
 services:
   jekyll:
     image: jekyll/jekyll:latest
-    command: bash -c "bundle install && bundle exec jekyll serve --watch --force_polling --host 0.0.0.0"
+    command: >
+      bash -c "echo \"url: https://$${BLOG_DOMAIN}\" > /tmp/_config.domain.yml
+      && bundle install
+      && bundle exec jekyll serve --watch --force_polling --host 0.0.0.0
+      --config _config.yml,/tmp/_config.domain.yml"
     volumes:
       - .:/srv/jekyll
       - bundle-cache:/usr/local/bundle
     expose:
       - "4000"
     environment:
+      # Otherwise `jekyll serve` overrides site.url with http://0.0.0.0:4000
+      JEKYLL_ENV: production
+      BLOG_DOMAIN: ${BLOG_DOMAIN}
       VIRTUAL_HOST: ${BLOG_DOMAIN:?Set BLOG_DOMAIN in .env}
       VIRTUAL_PORT: "4000"
       LETSENCRYPT_HOST: ${BLOG_DOMAIN}
