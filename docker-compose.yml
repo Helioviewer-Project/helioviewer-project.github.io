@@ -1,0 +1,32 @@
+# Serves the site behind an existing nginx-proxy + acme-companion setup.
+#
+# Usage:
+#   cp .env.example .env   # then set BLOG_DOMAIN
+#   docker compose up -d
+#
+# Requires an external Docker network named "nginx-proxy" that the
+# nginx-proxy container is attached to.
+
+services:
+  jekyll:
+    image: jekyll/jekyll:latest
+    command: bash -c "bundle install && bundle exec jekyll serve --watch --force_polling --host 0.0.0.0"
+    volumes:
+      - .:/srv/jekyll
+      - bundle-cache:/usr/local/bundle
+    expose:
+      - "4000"
+    environment:
+      VIRTUAL_HOST: ${BLOG_DOMAIN:?Set BLOG_DOMAIN in .env}
+      VIRTUAL_PORT: "4000"
+      LETSENCRYPT_HOST: ${BLOG_DOMAIN}
+    networks:
+      - nginx-proxy
+    restart: unless-stopped
+
+volumes:
+  bundle-cache:
+
+networks:
+  nginx-proxy:
+    external: true
