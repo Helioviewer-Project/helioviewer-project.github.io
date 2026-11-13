@@ -85,7 +85,5 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-  - Dockerfile
-  - docker-compose.yml
+  - docker
   - Makefile
-  - serve-local

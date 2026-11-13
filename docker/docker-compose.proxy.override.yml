@@ -1,0 +1,22 @@
+# Override of docker/docker-compose.yml for serving behind an existing
+# nginx-proxy + acme-companion setup, at https://${BLOG_DOMAIN}.
+#
+# `make up` adds this file automatically when BLOG_DOMAIN is set in .env
+# (see .env.example). Requires an external Docker network named
+# "nginx-proxy" that the nginx-proxy container is attached to.
+
+services:
+  jekyll:
+    environment:
+      # Otherwise `jekyll serve` overrides site.url with http://0.0.0.0:4000
+      JEKYLL_ENV: production
+      BLOG_DOMAIN: ${BLOG_DOMAIN}
+      VIRTUAL_HOST: ${BLOG_DOMAIN:?Set BLOG_DOMAIN in .env}
+      VIRTUAL_PORT: "4000"
+      LETSENCRYPT_HOST: ${BLOG_DOMAIN}
+    networks:
+      - nginx-proxy
+
+networks:
+  nginx-proxy:
+    external: true
