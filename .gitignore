@@ -10,3 +10,4 @@ Gemfile
 Gemfile.lock
 node_modules
 package.json
+.env

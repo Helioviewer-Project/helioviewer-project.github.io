@@ -12,6 +12,9 @@ The intial repository is a fork of [jekyll-now](https://github.com/barryclark/je
 Test locally using docker.
 
 ```bash
-docker build . -t hv-jekyll
-docker run --rm -p 127.0.0.1:4000:4000 -v $PWD:/site -t hv-jekyll serve
+make up     # serves on http://localhost:4000
+make logs   # follow Jekyll output
+make down   # stop
 ```
+
+To serve behind nginx-proxy instead, copy `.env.example` to `.env` and set `BLOG_DOMAIN`.
