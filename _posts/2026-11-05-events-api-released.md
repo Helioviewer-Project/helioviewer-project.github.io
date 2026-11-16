@@ -31,7 +31,7 @@ Today it serves events from:
 The API is live at
 [https://events.helioviewer.org](https://events.helioviewer.org).
 
-It holds almost 5 million events, going back to 1975.
+As of today, the Events-API holds almost 5 million events, going back to 1975.
 
 ![Events API statistics dashboard](/images/uploads/2026/events_api_stats.png){: style="max-width: 100%"}
 
@@ -74,8 +74,8 @@ events. There is also an
 
 ## Integrated into helioviewer.org
 
-helioviewer.org now gets all of its features and events from the Events
-API. In the viewer, open _Data Sources > Features and Events_ and pick
+helioviewer.org now uses the Events API to retrieve the features and
+events shown in the interface. In the viewer, open _Data Sources > Features and Events_ and pick
 any source: HEK, CCMC, WSA or RHESSI.
 
 - The events tree in that panel is the event-tree React component
