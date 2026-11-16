@@ -1,0 +1,27 @@
+# Serves the site at http://localhost:4000 (this machine only).
+#
+# Usage: make up
+#
+# To serve behind nginx-proxy instead, set BLOG_DOMAIN in .env;
+# `make up` then also loads docker/docker-compose.proxy.override.yml.
+
+name: helioviewer-blog
+
+services:
+  jekyll:
+    image: jekyll/jekyll:latest
+    # If BLOG_DOMAIN is set (by the proxy override), use it as site url.
+    command: >
+      bash -c "if [ -n \"$${BLOG_DOMAIN}\" ]; then echo \"url: https://$${BLOG_DOMAIN}\"; else echo '{}'; fi > /tmp/_config.domain.yml
+      && bundle install
+      && bundle exec jekyll serve --watch --force_polling --host 0.0.0.0
+      --config _config.yml,/tmp/_config.domain.yml"
+    volumes:
+      - ..:/srv/jekyll
+      - bundle-cache:/usr/local/bundle
+    ports:
+      - "127.0.0.1:4000:4000"
+    restart: unless-stopped
+
+volumes:
+  bundle-cache:
